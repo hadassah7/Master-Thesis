@@ -1,0 +1,10 @@
+#!/bin/bash
+ip route add 192.168.0.0/24 dev usb0 src 192.168.0.141 table rt2
+ip route add default via  192.168.0.1 dev usb0 table rt2
+ip rule add from 192.168.0.141/32 table rt2
+ip rule add to 192.168.0.141/32 table rt2
+ip route add 192.168.0.0/24 dev usb1 src 192.168.0.142 table rt3
+ip route add default via  192.168.0.1 dev usb1 table rt3
+ip rule add from 192.168.0.142/32 table rt3
+ip rule add to 192.168.0.142/32 table rt3
+
